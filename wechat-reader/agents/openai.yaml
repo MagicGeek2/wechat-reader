@@ -1,0 +1,6 @@
+interface:
+  display_name: "WeChat Reader"
+  short_description: "Read public WeChat articles safely"
+  default_prompt: "Use $wechat-reader to read a public WeChat article."
+policy:
+  allow_implicit_invocation: true
