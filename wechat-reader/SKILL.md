@@ -24,7 +24,7 @@ description: 读取公开微信公众号文章的正文、元数据和图片型�
 3. 按状态处理：
 
    - `ok`：使用 `content`，同时报告标题、作者、图片数量和来源链接。
-   - `image_only`：正文节点为空但已提取 `image_urls`。按原顺序打开或 OCR 所有图片，再合并为可读正文；图片文章不能直接报告为“无法读取”。
+   - `image_only`：正文节点为空但已提取 `image_urls`。按原顺序打开或 OCR 所有图片，再合并为可读正文；图片文章不能直接报告为“无法读取”。macOS 可编译 `scripts/vision_ocr.swift`，从 JSON 或逐行 HTTPS 图片 URL 输入并输出 JSONL；没有 Vision 运行时则改用可用的视觉读取工具。
    - `metadata_only`：只有元数据，明确说明正文未取得。
    - `captcha_required`：最终地址含 `/mp/wappoc_appmsgcaptcha` 或页面出现“环境异常/完成验证后即可继续访问”。停止自动读取，不尝试破解、打码、代理池或轮换 IP。
 
